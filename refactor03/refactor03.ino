@@ -78,7 +78,7 @@ const float TsMax = 0.5; //500 milliseconds
 
 const int motorDirection = 1; // If motor spins in the opposite direction then you can change this to -1.
 
-MotorHB3SAMD21 motor = MotorHB3SAMD21(AIN1, PWMA, motorDirection,96000); //96000 for 500Hz, 120000 for 400Hz, 240000 for 200Hz PWM, 480000 for 100Hz PWM, 960000 for 50Hz
+MotorHB3SAMD21 motor = MotorHB3SAMD21(AIN1, PWMA, motorDirection,2400); //9600 5KHz 19200 2.5Khz 96000 for 500Hz, 120000 for 400Hz, 240000 for 200Hz PWM, 480000 for 100Hz PWM, 960000 for 50Hz
 
 
 /******* Drive signals ********/
@@ -871,8 +871,10 @@ void loop() {
 	doReport = true;
   }
   SMRun();
-  motor.drive(-0.5,50);
-  motor.drive(+0.5,50);
+  //motor.drive(-0.7,1);
+  motor.drive(-0.42,2000);
+  //motor.drive(0.7,1);
+  motor.drive(0.42,2000);
 }
 
 //===================================================================================
