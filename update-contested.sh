@@ -1,4 +1,4 @@
 #! /bin/sh
 
-./update.sh contested
+./update.sh cp contested
 
